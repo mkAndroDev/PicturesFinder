@@ -1,20 +1,24 @@
 package com.krawczyk.maciej
 
 import com.krawczyk.maciej.requests.PixabyService
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object APIClient {
-    private const val BASE_URL = "https://pixabay.com/api/"
-    const val KEY = "33537726-76c116d79d970104c5eacd0e9"
 
-    private fun getRetrofit(): Retrofit {
+internal object APIClient {
+    private const val BASE_URL = "https://pixabay.com/api/"
+
+    private fun getRetrofit(interceptor: Interceptor): Retrofit {
+        val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
             .build()
     }
 
-    val apiService: PixabyService = getRetrofit().create(PixabyService::class.java)
+    fun getService(interceptor: Interceptor): PixabyService =
+        getRetrofit(interceptor).create(PixabyService::class.java)
 }
