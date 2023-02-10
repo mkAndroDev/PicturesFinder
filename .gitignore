@@ -1,3 +1,6 @@
+# Private api data
+networking/src/main/java/com/krawczyk/maciej/ApiData.kt
+
 # Built application files
 *.apk
 *.aar

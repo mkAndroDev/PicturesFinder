@@ -8,10 +8,6 @@ class ApiHelper(interceptor: Interceptor) {
     private val pixabyService = APIClient.getService(interceptor)
 
     fun getPictures(query: String) = flow {
-        emit(pixabyService.doGetUserList(KEY, query))
-    }
-
-    private companion object {
-        const val KEY = "33537726-76c116d79d970104c5eacd0e9"
+        emit(pixabyService.doGetUserList(ApiData.API_KEY, query))
     }
 }
