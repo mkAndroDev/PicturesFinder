@@ -16,3 +16,5 @@ rootProject.name = "PicturesFinder"
 include ':app'
 include ':dataStorage'
 include ':networking'
+include ':repository'
+include ':searchExecutorUseCase'

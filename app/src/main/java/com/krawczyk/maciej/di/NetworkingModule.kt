@@ -1,6 +1,6 @@
 package com.krawczyk.maciej.di
 
-import com.krawczyk.maciej.ApiHelper
+import com.krawczyk.maciej.searchUseCase.SearchExecutor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,10 +14,10 @@ object NetworkingModule {
 
     @Singleton
     @Provides
-    fun provideAPI() : ApiHelper {
+    fun provideSearchExecutor(): SearchExecutor {
         val interceptor = HttpLoggingInterceptor()
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-        return ApiHelper(interceptor)
+        return SearchExecutor()
     }
 
 }

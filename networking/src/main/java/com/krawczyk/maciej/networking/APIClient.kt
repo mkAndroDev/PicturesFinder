@@ -1,6 +1,6 @@
-package com.krawczyk.maciej
+package com.krawczyk.maciej.networking
 
-import com.krawczyk.maciej.requests.PixabyService
+import com.krawczyk.maciej.networking.requests.PixabyService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

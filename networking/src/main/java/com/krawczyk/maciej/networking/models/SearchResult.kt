@@ -1,4 +1,4 @@
-package com.krawczyk.maciej.models
+package com.krawczyk.maciej.networking.models
 
 import com.google.gson.annotations.SerializedName
 
