@@ -1,7 +1,6 @@
 package com.krawczyk.maciej.ui.main
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +17,9 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainFragment : Fragment() {
 
     private val viewModel: MainViewModel by viewModels()
-    private val listItemAdapter = ListItemAdapter()
+    private val listItemAdapter = ListItemAdapter {
+        viewModel.onSearchDataItemClicked(it)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +44,6 @@ class MainFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launchWhenCreated {
             viewModel.pictures.collect {
                 listItemAdapter.apply {
-                    Log.e("MACIE", "it = $it")
                     updateAdapter(it)
                     notifyDataSetChanged()
                 }

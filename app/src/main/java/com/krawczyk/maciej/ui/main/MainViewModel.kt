@@ -32,8 +32,8 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    fun onItemClicked() {
-        Log.e("MACIEK", "onItemClicked")
+    fun onSearchDataItemClicked(searchDataItem: SearchDataItem) {
+        Log.e("MACIEK", "onItemClicked = $searchDataItem")
     }
 
     private companion object {

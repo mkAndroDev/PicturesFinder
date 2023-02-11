@@ -7,12 +7,17 @@
         <variable
             name="searchData"
             type="com.krawczyk.maciej.searchUseCase.models.SearchDataItem" />
+
+        <variable
+            name="listItemAdapterListener"
+            type="com.krawczyk.maciej.ui.adapters.ListItemAdapterListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:onClick="@{() -> listItemAdapterListener.onSearchDataItemClicked(searchData)}"
         android:padding="12dp">
 
         <ImageView
