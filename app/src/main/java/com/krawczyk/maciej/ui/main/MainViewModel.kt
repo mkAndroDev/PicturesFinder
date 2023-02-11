@@ -1,5 +1,6 @@
 package com.krawczyk.maciej.ui.main
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.krawczyk.maciej.searchUseCase.SearchExecutor
@@ -29,6 +30,10 @@ class MainViewModel @Inject constructor(
                 _pictures.emit(it)
             }
         }
+    }
+
+    fun onItemClicked() {
+        Log.e("MACIEK", "onItemClicked")
     }
 
     private companion object {

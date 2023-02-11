@@ -4,25 +4,29 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.krawczyk.maciej.databinding.ResultRowItemBinding
-import com.krawczyk.maciej.models.Hits
+import com.krawczyk.maciej.searchUseCase.models.SearchDataItem
+import com.squareup.picasso.Picasso
 
 class ListItemAdapter : RecyclerView.Adapter<ListItemAdapter.ViewHolder>() {
 
-    private val dataSet = mutableListOf<Hits>()
+    private val dataSet = mutableListOf<SearchDataItem>()
     private lateinit var binding: ResultRowItemBinding
 
     class ViewHolder(
         private val binding: ResultRowItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(hits: Hits) {
-            binding.hits = hits
+        fun bind(searchDataItem: SearchDataItem) {
+            Picasso.get()
+                .load(searchDataItem.previewURL)
+                .into(binding.ivThumbnail)
+            binding.searchData = searchDataItem
         }
     }
 
-    fun updateAdapter(hits: List<Hits>) {
+    fun updateAdapter(searchDataItems: List<SearchDataItem>) {
         dataSet.apply {
             clear()
-            addAll(hits)
+            addAll(searchDataItems)
         }
     }
 

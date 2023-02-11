@@ -1,6 +1,8 @@
 # Private api data
 networking/src/main/java/com/krawczyk/maciej/ApiData.kt
 
+.DS_Store
+
 # Built application files
 *.apk
 *.aar

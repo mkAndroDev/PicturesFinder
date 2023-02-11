@@ -7,8 +7,8 @@ class StorageProvider(
     private val roomDataStorage: RoomDataStorage
 ) {
 
-    fun saveHits(hits: Hits) {
-        roomDataStorage.saveToDb(hits)
+    fun saveHits() {
+        roomDataStorage.saveToDb()
     }
 
     fun readSearchResult() {

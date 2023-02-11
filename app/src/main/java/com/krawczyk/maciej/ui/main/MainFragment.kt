@@ -14,7 +14,6 @@ import com.krawczyk.maciej.databinding.FragmentMainBinding
 import com.krawczyk.maciej.ui.adapters.ListItemAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class MainFragment : Fragment() {
 

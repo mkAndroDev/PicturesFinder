@@ -1,9 +1,23 @@
 plugins {
-    id 'java-library'
-    id 'org.jetbrains.kotlin.jvm'
+    id 'kotlin-kapt'
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.dagger.hilt.android'
 }
 
-java {
+android {
+    namespace 'com.krawczyk.maciej.searchUsecase'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 23
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
     sourceCompatibility = JavaVersion.VERSION_1_7
     targetCompatibility = JavaVersion.VERSION_1_7
 }
@@ -12,4 +26,7 @@ dependencies {
     implementation project(path: ':repository')
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation "com.google.dagger:hilt-android:2.44"
+
+    kapt "com.google.dagger:hilt-compiler:2.44"
 }
