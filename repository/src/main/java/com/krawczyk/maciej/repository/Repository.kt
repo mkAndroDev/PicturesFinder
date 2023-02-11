@@ -14,7 +14,7 @@ class Repository(
     suspend fun getPictures(query: String) =
         apiHelper.getPictures(query).map { SearchResult.createSearchResult(it) }
 
-    suspend fun getHits(id: String): Flow<SearchResult> {
+    suspend fun getPicture(id: String): Flow<SearchResult> {
         //TODO: 1 step - return saved from storage
         //TODO: 2 step - api call and save to storageProvider
         //TODO: 3 step - return newest value
