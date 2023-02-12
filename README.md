@@ -11,6 +11,7 @@ Next tasks:
     8) Build chache strtegy for PictureDetailsUseCase
     9) Add error handling for networking calls
     10) Build views based on material design
+    11) Use better solution for filling adapter than remove and add new list
 
 Quality tasks:
     1) Expand SearchExecutorTest by next tests
